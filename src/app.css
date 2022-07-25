@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	@font-face {
+		font-family: 'Sortdecai Wild';
+		src: local('Sortdecai Cursive Wild Script'),
+			url('/src/lib/webfonts/monthoers-webfont.woff') format('woff'),
+			url('/src/lib/webfonts/monthoers-webfont.woff2') format('woff2');
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Swistblnk Monthoers';
+		src: local('Swistblnk Monthoers Regular'),
+			url('/src/lib/webfonts/monthoers-webfont.woff') format('woff'),
+			url('/src/lib/webfonts/monthoers-webfont.woff2') format('woff2');
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Quicksand Dash';
+		src: url('/src/lib/webfonts/quicksand.dash-regular.woff') format('woff'),
+			url('/src/lib/webfonts/quicksand.dash-regular.woff2') format('woff2');
+		font-style: normal;
+		font-display: swap;
+	}
+}
