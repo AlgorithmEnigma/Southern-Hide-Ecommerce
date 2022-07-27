@@ -1,15 +1,16 @@
 <script lang="ts">
-	import { openModal, closeModal } from 'svelte-modals';
+	import Auth from '$lib/components/Auth.svelte';
 
 	export let isOpen: boolean = false;
-	export let title: string;
+	export let title: string | undefined;
+	export let isSignedIn: boolean;
 </script>
 
 {#if isOpen}
 	<div class="modal">
 		<div class="contents">
 			<h2>{title}</h2>
-			<p>Login</p>
+			<Auth {isSignedIn} />
 		</div>
 	</div>
 {/if}

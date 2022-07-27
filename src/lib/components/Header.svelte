@@ -1,12 +1,18 @@
 <script>
 	import { UserCheckIcon, SearchIcon, UserIcon, ShoppingCartIcon } from 'svelte-feather-icons';
-	import { userStore } from '$lib/stores/sessionStore';
-	import { onMount } from 'svelte';
 	import { openModal } from 'svelte-modals';
 	import LoginModal from './LoginModal.svelte';
 
+	import { supabase } from '$lib/utils/supabaseClient';
+
 	function handleLoginModal() {
-		openModal(LoginModal, { title: 'Login' });
+		if (supabase.auth.session()) {
+			console.log('User is already authenticated');
+			openModal(LoginModal, { title: supabase.auth.user()?.email, isSignedIn: true });
+		} else {
+			console.log('User is not authenticated');
+			openModal(LoginModal, { title: 'Login', isSignedIn: false });
+		}
 	}
 
 	// onMount(() => {
