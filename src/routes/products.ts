@@ -45,7 +45,7 @@ export async function GET() {
 	if (products) {
 		return {
 			status: 200,
-			headers: {},
+			headers: { 'access-control-allow-origin': '*' },
 			body: { products }
 		};
 	}
