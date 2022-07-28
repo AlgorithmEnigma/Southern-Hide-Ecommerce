@@ -3,6 +3,7 @@
 	import { openModal } from 'svelte-modals';
 	import LoginModal from './LoginModal.svelte';
 
+	// Supabase helper
 	import { supabase } from '$lib/utils/supabaseClient';
 
 	function handleLoginModal() {
@@ -14,36 +15,37 @@
 			openModal(LoginModal, { title: 'Login', isSignedIn: false });
 		}
 	}
-
-	// onMount(() => {
-	// 	console.log($userStore);
-	// });
 </script>
 
 <div class="fixed w-full h-36 flex flex-row justify-between items-center">
 	<div class="flex flex-row w-[10vw] justify-between items-center">
 		<div class="nav-menu ml-[3vw]">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="75px"
-				height="75px"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke="currentColor"
-				stroke-width="1.2px"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				class="feather feather-align-left"
-				><line x1="17" y1="10" x2="3" y2="10" /><line x1="21" y1="6" x2="3" y2="6" /><line
-					x1="21"
-					y1="14"
-					x2="3"
-					y2="14"
-				/><line x1="17" y1="18" x2="3" y2="18" /></svg
-			>
+			<!-- TODO: Add nav menu -->
+			<a href="/products">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="75px"
+					height="75px"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+					stroke-width="1.2px"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="feather feather-align-left"
+					><line x1="17" y1="10" x2="3" y2="10" /><line x1="21" y1="6" x2="3" y2="6" /><line
+						x1="21"
+						y1="14"
+						x2="3"
+						y2="14"
+					/><line x1="17" y1="18" x2="3" y2="18" /></svg
+				>
+			</a>
 		</div>
 		<a href="/"><h2 class="font-swistblnk text-logo">SHC</h2></a>
 	</div>
+
+	<!-- TODO: Change color on non index page -->
 	<div class="flex flex-row mr-[3vw] justify-between w-[30vw]">
 		<div class="flex flex-row">
 			<div class="search mr-[5vw]"><SearchIcon size="60" class="text-background" /></div>

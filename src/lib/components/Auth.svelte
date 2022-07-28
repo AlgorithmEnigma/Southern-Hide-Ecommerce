@@ -6,8 +6,6 @@
 	let email: string;
 	export let isSignedIn: boolean;
 
-	console.log(isSignedIn);
-
 	const handleLogin = async () => {
 		try {
 			loading = true;
