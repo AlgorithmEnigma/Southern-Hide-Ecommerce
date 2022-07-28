@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { supabase } from '$lib/utils/supabaseClient';
 	import { closeModal } from 'svelte-modals';
+	// import { onMount } from 'svelte';
 
 	let loading = false;
 	let email: string;

@@ -20,6 +20,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Southern Hide Creations</title>
+</svelte:head>
+
 <Header />
 <!-- TODO: Make responsive -->
 

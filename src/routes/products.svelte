@@ -2,6 +2,10 @@
 	import Header from '$lib/components/Header.svelte';
 </script>
 
+<svelte:head>
+	<title>Southern Hide - Store</title>
+</svelte:head>
+
 <Header />
 
 <!-- TODO: Style page -->
