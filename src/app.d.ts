@@ -5,7 +5,9 @@
 // and what to do when importing types
 declare namespace App {
 	// interface Locals {}
-	// interface Platform {}
+	interface Platform {
+		env: { NODE_VERSION: '16.13.0' };
+	}
 	// interface Session {}
 	// interface Stuff {}
 }
