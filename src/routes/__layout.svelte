@@ -1,13 +1,17 @@
 <script>
 	import '../app.css';
 	import { Modals, closeModal } from 'svelte-modals';
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/ContactFooter.svelte';
 </script>
 
 <svelte:head />
 <body class="bg-background" />
 
 <Modals><div slot="backdrop" class="backdrop" on:click={closeModal} /></Modals>
+<Header />
 <slot />
+<Footer />
 
 <style>
 	.backdrop {
