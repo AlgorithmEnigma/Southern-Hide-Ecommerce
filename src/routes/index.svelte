@@ -24,7 +24,6 @@
 	<title>Southern Hide Creations</title>
 </svelte:head>
 
-<Header />
 <!-- TODO: Make responsive -->
 
 <div class="hero grid grid-cols-10 grid-rows-6">

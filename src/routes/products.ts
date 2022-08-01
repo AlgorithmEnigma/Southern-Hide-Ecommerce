@@ -18,28 +18,28 @@ export async function GET() {
 	}
 
 	// Get product image url from supabase, then map to products array
-	const productsMapped = products?.map(async (product) => {
-		const { publicURL, error } = await supabase.storage
-			.from('product-images')
-			.getPublicUrl(`${product.product_slug}/${product.product_slug}-01.webp`);
-		if (error) throw error;
-		return {
-			product_name: product.product_name,
-			product_slug: product.product_slug,
-			product_price: product.product_price,
-			image_url: publicURL
-		};
-	});
+	// const productsMapped = products?.map(async (product) => {
+	// 	const { publicURL, error } = await supabase.storage
+	// 		.from('product-images')
+	// 		.getPublicUrl(`${product.product_slug}/${product.product_slug}-01.webp`);
+	// 	if (error) throw error;
+	// 	return {
+	// 		product_name: product.product_name,
+	// 		product_slug: product.product_slug,
+	// 		product_price: product.product_price,
+	// 		image_url: publicURL
+	// 	};
+	// });
 
-	if (products) {
-		productsMapped?.forEach(async (product, index) => {
-			product.then((value) => {
-				if (products != null) {
-					products[index] = value;
-				}
-			});
-		});
-	}
+	// if (products) {
+	// 	productsMapped?.forEach(async (product, index) => {
+	// 		product.then((value) => {
+	// 			if (products != null) {
+	// 				products[index] = value;
+	// 			}
+	// 		});
+	// 	});
+	// }
 
 	// If the products exist return 200 status and body with the products
 	if (products) {
