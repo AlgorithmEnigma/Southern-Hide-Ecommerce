@@ -21,7 +21,7 @@
 	<div class="flex flex-row w-[10vw] justify-between items-center">
 		<div class="nav-menu ml-[3vw]">
 			<!-- TODO: Add nav menu -->
-			<a href="/products">
+			<a sveltekit:prefetch href="/products">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="75px"
