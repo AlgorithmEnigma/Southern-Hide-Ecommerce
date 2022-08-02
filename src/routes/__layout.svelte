@@ -5,7 +5,9 @@
 	import Footer from '$lib/components/ContactFooter.svelte';
 </script>
 
-<svelte:head />
+<svelte:head>
+	<title>Southern Hide</title>
+</svelte:head>
 <body class="bg-background" />
 
 <Modals><div slot="backdrop" class="backdrop" on:click={closeModal} /></Modals>
