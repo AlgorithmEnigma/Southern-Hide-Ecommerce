@@ -10,8 +10,10 @@ module.exports = {
 			},
 			fontSize: {
 				title: 'calc(6rem + 5vw)',
-				subtitle: 'calc(1.5rem + 2vw)',
-				logo: 'calc(2rem + 1vw)'
+				subtitle: 'calc(3rem + 2vw)',
+				logo: 'calc(1.5rem + 2vw)',
+				copy: 'calc(1rem + 2vw)',
+				copyxl: 'calc(1.5rem + 2vw)'
 			},
 			colors: {
 				// 'old-lace': '#F7EDDB',
