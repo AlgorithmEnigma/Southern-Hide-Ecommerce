@@ -1,6 +1,4 @@
 <script lang="ts">
-	import sendgrid from '@sendgrid/mail';
-
 	import ContactField from '$lib/components/Contact/ContactField.svelte';
 	import MessageField from '$lib/components/Contact/MessageField.svelte';
 
