@@ -35,18 +35,20 @@
 </script>
 
 <div class="flex justify-center align-center">
-	<h1 class="text-raisin text-subtitle font-swistblnk mt-44">Contact</h1>
+	<h1 class="text-raisin font-swistblnk text-5xl mt-44 mb-10 md:text-subtitle ">Contact</h1>
 </div>
 
-<div class="flex flex-row justify-evenly align-center mt-20">
+<div
+	class="flex flex-col justify-center items-center mb-5 mt-5 md:flex-row md:justify-evenly md:align-center md:mt-20"
+>
 	<div>
-		<p class="text-copy font-swistblnk">
+		<p class="text-xl md:text-copy font-swistblnk">
 			Want to get in touch? <br /> ask about a custom order? <br /> well here’s the place!
 		</p>
 	</div>
-	<div class="w-2/5">
+	<div class="mt-10 md:w-2/5">
 		{#if !sentEmail}
-			<form class="row flex flex-center" on:submit|preventDefault={submitContact}>
+			<form class="flex items-start" on:submit|preventDefault={submitContact}>
 				<div>
 					<ContactField
 						type="text"
@@ -67,7 +69,9 @@
 						label="Email"
 					/>
 					<MessageField bind:value={message} />
-					<button type="submit" class="">Submit -></button>
+					<button type="submit" class="font-swistblnk text-2xl mt-4 text-primary outline-none"
+						>Submit →</button
+					>
 				</div>
 			</form>
 		{:else}
@@ -77,5 +81,18 @@
 				</p>
 			</div>
 		{/if}
+		<div class="mt-10">
+			<a href="mailto:custom@southernhide.com" class="font-swistblnk text-raisin text-xl">
+				Email us instead: custom@southernhide.com
+			</a>
+		</div>
 	</div>
 </div>
+
+<style>
+	button:hover,
+	button:focus {
+		font-size: 2rem;
+		border-bottom: 4px solid #bc6c25;
+	}
+</style>

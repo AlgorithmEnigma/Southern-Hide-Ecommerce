@@ -14,8 +14,8 @@ export async function POST({ request }: { request: Request }) {
 	};
 
 	const msgToHost = {
-		to: 'jordandlowell@gmail.com', // TODO Change to your host recipient
-		from: 'me@jordanlowell.com', // TODO Change to your verified sender on Production SendGrid account
+		to: '', // TODO Change to your host recipient
+		from: '', // TODO Change to your verified sender on Production SendGrid account
 		subject: 'A customer has sent you a message!',
 		text: JSON.stringify(info)
 		// html: '<strong>and easy to do anywhere, even with Node.js</strong>',
