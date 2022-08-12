@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+	.svg-sm {
+		width: 2rem;
+		height: 2rem;
+	}
+	.svg-md {
+		width: 3.5rem;
+		height: 3.5rem;
+	}
+	.svg-lg {
+		width: 4.5rem;
+		height: 4.5rem;
+	}
+	.svg-xl {
+		width: 6rem;
+		height: 6rem;
+	}
+}
+
 @layer base {
 	@font-face {
 		font-family: 'Sortdecai Wild';
