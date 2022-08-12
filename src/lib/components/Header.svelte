@@ -1,5 +1,9 @@
 <script>
-	import { UserCheckIcon, SearchIcon, UserIcon, ShoppingCartIcon } from 'svelte-feather-icons';
+	// import { UserCheckIcon, SearchIcon, UserIcon, ShoppingCartIcon } from 'svelte-feather-icons';
+	import MenuIcon from '$lib/components/svg/MenuIcon.svelte';
+	import SearchIcon from '$lib/components/svg/SearchIcon.svelte';
+	import UserIcon from '$lib/components/svg/UserIcon.svelte';
+	import ShoppingBagIcon from '$lib/components/svg/ShoppingBagIcon.svelte';
 	import { openModal } from 'svelte-modals';
 	import LoginModal from './LoginModal.svelte';
 
@@ -22,24 +26,7 @@
 		<div class="nav-menu ml-[3vw]">
 			<!-- TODO: Add nav menu -->
 			<a sveltekit:prefetch href="/products">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="75px"
-					height="75px"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-					stroke-width="1.2px"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					class="feather feather-align-left"
-					><line x1="17" y1="10" x2="3" y2="10" /><line x1="21" y1="6" x2="3" y2="6" /><line
-						x1="21"
-						y1="14"
-						x2="3"
-						y2="14"
-					/><line x1="17" y1="18" x2="3" y2="18" /></svg
-				>
+				<MenuIcon tailwindClasses="svg-sm" />
 			</a>
 		</div>
 		<a href="/"><h2 class="font-swistblnk text-logo">SHC</h2></a>
@@ -48,7 +35,7 @@
 	<!-- TODO: Change color on non index page -->
 	<div class="flex flex-row mr-[3vw] justify-between w-[30vw]">
 		<div class="flex flex-row">
-			<div class="search mr-[5vw]"><SearchIcon size="60" class="text-background" /></div>
+			<div class="search mr-[5vw]"><SearchIcon tailwindClasses="svg-sm text-background" /></div>
 			<!-- {#if $userStore}
 				<a href="/profile">
 					<div class="user mr-[5vw]"><UserCheckIcon size="60" class="text-background" /></div>
@@ -60,9 +47,11 @@
 			{/if} -->
 
 			<button on:click={handleLoginModal}>
-				<div class="user mr-[5vw]"><UserIcon size="60" class="text-background" /></div>
+				<div class="user mr-[5vw]"><UserIcon tailwindClasses="svg-sm text-background" /></div>
 			</button>
 		</div>
-		<div class="checkout mr-[5vw]"><ShoppingCartIcon size="60" class="text-background" /></div>
+		<div class="checkout mr-[5vw]">
+			<ShoppingBagIcon tailwindClasses="svg-sm text-background" />
+		</div>
 	</div>
 </div>
