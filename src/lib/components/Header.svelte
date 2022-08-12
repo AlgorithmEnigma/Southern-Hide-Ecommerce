@@ -1,14 +1,23 @@
 <script>
-	// import { UserCheckIcon, SearchIcon, UserIcon, ShoppingCartIcon } from 'svelte-feather-icons';
+	// Import SVG Icons
 	import MenuIcon from '$lib/components/svg/MenuIcon.svelte';
 	import SearchIcon from '$lib/components/svg/SearchIcon.svelte';
 	import UserIcon from '$lib/components/svg/UserIcon.svelte';
 	import ShoppingBagIcon from '$lib/components/svg/ShoppingBagIcon.svelte';
+
+	import NavMenu from '$lib/components/NavMenu.svelte';
+
 	import { openModal } from 'svelte-modals';
 	import LoginModal from './LoginModal.svelte';
 
 	// Supabase helper
 	import { supabase } from '$lib/utils/supabaseClient';
+
+	export let isOpen = false;
+
+	function closeMenu() {
+		isOpen = !isOpen;
+	}
 
 	function handleLoginModal() {
 		if (supabase.auth.session()) {
@@ -21,13 +30,19 @@
 	}
 </script>
 
+<NavMenu {isOpen} on:closeMenu={closeMenu} />
+
 <div class="fixed w-full h-36 flex flex-row justify-between items-center">
 	<div class="flex flex-row w-[10vw] justify-between items-center">
 		<div class="nav-menu ml-[3vw]">
 			<!-- TODO: Add nav menu -->
-			<a sveltekit:prefetch href="/products">
+			<button
+				on:click={() => {
+					isOpen = !isOpen;
+				}}
+			>
 				<MenuIcon tailwindClasses="svg-sm" />
-			</a>
+			</button>
 		</div>
 		<a href="/"><h2 class="font-swistblnk text-logo">SHC</h2></a>
 	</div>
