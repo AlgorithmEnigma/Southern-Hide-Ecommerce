@@ -31,7 +31,7 @@
 			<li><a href="/">Home</a></li>
 			<li><a sveltekit:prefetch href="/products">Products</a></li>
 			<li><a href="/">About</a></li>
-			<li><a href="/">Contact</a></li>
+			<li><a href="/contact">Contact</a></li>
 		</ol>
 	</div>
 </div>
