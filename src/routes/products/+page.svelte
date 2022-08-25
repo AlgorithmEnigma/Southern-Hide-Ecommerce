@@ -1,16 +1,3 @@
-<script context="module">
-	export async function load({ props }) {
-		const products = props.products;
-
-		return {
-			status: 200,
-			props: {
-				products: products
-			}
-		};
-	}
-</script>
-
 <script lang="ts">
 	import { supabase } from '$lib/utils/supabaseClient';
 	import Header from '$lib/components/Header.svelte';

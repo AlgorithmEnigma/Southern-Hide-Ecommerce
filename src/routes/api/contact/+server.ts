@@ -1,3 +1,4 @@
+import { json } from '@sveltejs/kit';
 // import type { RequestHandler } from '@sveltejs/kit';
 import sgMail from '@sendgrid/mail';
 
@@ -38,10 +39,9 @@ export async function POST({ request }: { request: Request }) {
 				console.log(error);
 			});
 	} else {
-		return {
-			status: 400,
-			body: { message: 'Please provide an email address.' }
-		};
+		return json({ message: 'Please provide an email address.' }, {
+			status: 400
+		});
 	}
 
 	sgMail
@@ -53,10 +53,7 @@ export async function POST({ request }: { request: Request }) {
 			console.log(error);
 		});
 
-	return {
-		status: 200,
-		body: {
-			message: `Message sent`
-		}
-	};
+	return json({
+		message: `Message sent`
+	});
 }
