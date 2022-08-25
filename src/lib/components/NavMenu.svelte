@@ -28,10 +28,10 @@
 	>
 	<div class="flex justify-center">
 		<ol class="mt-20 text-5xl font-swistblnk text-background">
-			<li><a href="/">Home</a></li>
-			<li><a sveltekit:prefetch href="/products">Products</a></li>
-			<li><a href="/">About</a></li>
-			<li><a href="/contact">Contact</a></li>
+			<li><a href="/" on:click={closeMenu}>Home</a></li>
+			<li><a sveltekit:prefetch href="/products" on:click={closeMenu}>Products</a></li>
+			<li><a href="/" on:click={closeMenu}>About</a></li>
+			<li><a href="/contact" on:click={closeMenu}>Contact</a></li>
 		</ol>
 	</div>
 </div>

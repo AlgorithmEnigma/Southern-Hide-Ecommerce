@@ -13,17 +13,17 @@ export async function load() {
 			.from('Products')
 			.select('product_name, product_slug, product_price');
 		if (error) throw error;
+
 		products = data;
 	} catch (error: unknown) {
 		console.error('Error retrieving products: ', (error as PostgrestError).message);
 	}
 
-	// If the products exist return 200 status and body with the products
 	if (products) {
-		return {
-			body: { products }
-		};
-	}
+		// console.log('Products: ', products);
 
-	throw redirect(503, 'Unable to retrieve products');
+		return { products: products };
+	} else {
+		throw redirect(503, 'Unable to retrieve products');
+	}
 }

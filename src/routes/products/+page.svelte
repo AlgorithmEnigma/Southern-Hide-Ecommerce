@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { supabase } from '$lib/utils/supabaseClient';
 	import Header from '$lib/components/Header.svelte';
+	import type { PageData, Errors } from './$types';
 
-	export let products: Record<string, unknown>[];
-	export let images: string[] = [];
+	export let data: PageData;
+	let { products } = data;
+	let images: Record<string, any> = [];
 
 	async function getImages() {
 		let imageArray: string[] = [];
@@ -13,14 +15,13 @@
 				.getPublicUrl(`${product.product_slug}/${product.product_slug}-01.webp`);
 			if (publicURL) {
 				imageArray.push(publicURL);
-				// console.log(imageArray);
 			}
 		});
 		// console.log(imageArray);
 		return imageArray;
 	}
 
-	getImages().then((data) => {
+	$: getImages().then((data) => {
 		images = data;
 	});
 </script>
@@ -39,8 +40,7 @@
 	{#each products as product, index}
 		<p>{product.product_name}</p>
 		<p>{product.product_price}</p>
-		<!-- <p>{index}</p> -->
-		<!-- <p>{images[0]}</p> -->
+
 		<img src={images[index]} alt={product.product_name} />
 	{/each}
 </div>
